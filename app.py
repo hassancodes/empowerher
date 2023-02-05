@@ -7,14 +7,13 @@ app = Flask(__name__)
 
 
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def home():
-    name = "hassan"
     return render_template("index.html")
 
 
 
-@app.route("/assistance")
+@app.route("/assistance",methods=["GET"])
 
 def assistance():
     # asking for the questions 
@@ -62,7 +61,7 @@ def submitpost():
 #################################################
 
 
-@app.route("/frequentask")
+@app.route("/frequentask", methods=["GET"])
 def frequentask():
     data = retrievequestions()
     return render_template("frequentask.html", data=data)
