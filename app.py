@@ -82,6 +82,6 @@ def secretstories():
 
 
 
-if __name__ == "__main__":
+while True:
     app.run(debug=True)
 
