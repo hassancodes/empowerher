@@ -2,7 +2,7 @@ from flask import Flask,request,redirect
 import os
 from flask import render_template
 from db import addquestions, retrievequestions,addstory,fetchstories,addunanweredquestions
-import pymongo
+
 app = Flask(__name__)
 
 
@@ -77,6 +77,9 @@ def secretstories():
     print(storydata)
 
     return render_template("secretstories.html", storydata=storydata)
+
+
+
 
 
 if __name__ == "__main__":
