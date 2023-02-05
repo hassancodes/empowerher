@@ -1,20 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EmpowerHernow | "Empowering Women, Enhancing Lives</title>
-</head>
-<body>
-    <nav>
-        <h3 align="center">Empower her now</h3>
-    </nav>
+{% include "header.html" %}
 
-    <form action="/askquestion" method="post">
+    <!-- <form action="/askquestion" method="post">
         <input name="title" type="text" placeholder="Question Title">
         <textarea placeholder="Description" name="description" id="" cols="30" rows="10"></textarea>
         <button type="submit">Submit</button>
+    </form> -->
+
+    <div class="askquestionform">
+        <form action="/askquestion" method="post">
+    <div class="mb-3">
+        <label  class="form-label">Ask your Question</label>
+        <input name="title" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Description</label>
+        <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success" >Submit</button>
     </form>
-</body>
-</html>
+    </div>
+
+      {% include "footer.html" %}

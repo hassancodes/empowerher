@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+body{
+    margin:0px;
+    border:0px;
+    font-family: "Raleway";
+    color:white;
+}
+
+.askquestionform{
+    padding: 5rem 10rem 5rem 10rem;
+    width: auto;
+    margin:auto;
+}
+
+.card{
+    padding: 2rem 10rem 2rem 10rem !important;
+    margin:100px;
+}
+.cardquestion{
+    padding: 2rem 10rem 2rem 10rem !important;
+    width: auto;
+    margin:auto;
+
+}
+

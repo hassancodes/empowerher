@@ -1,0 +1,21 @@
+{% include "header.html" %}
+{% for dict_item in data %}
+<!-- <div style="border:10px">
+      <h1>{{dict_item['title']}}</h1>
+      <h2>{{dict_item['description']}}</h2>
+      <br>
+      <br>
+    </div> -->
+
+
+    <div class="card cardquestion" >
+        <div class="card-header">
+            <h5>Q : {{dict_item['title']}}</h2>
+        </div>
+        <div class="card-body">
+          <!-- <h5 class="card-title">Special title treatment</h5> -->
+          <p class="card-text">Answer : {{dict_item['description']}}</p>
+        </div>
+      </div>
+{% endfor %}
+{% include "footer.html" %}

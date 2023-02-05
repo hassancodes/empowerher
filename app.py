@@ -5,16 +5,11 @@ import pymongo
 app = Flask(__name__)
 
 
-# database
-client = pymongo.MongoClient("mongodb+srv://mhassan:<password>@questiondb.ow3iutv.mongodb.net/?retryWrites=true&w=majority")
-db = client.Questiondb
-print(db)
 
-name = "Hello"
 @app.route("/")
 def home():
     name = "hassan"
-    return render_template("index.html", name=name)
+    return render_template("index.html")
 
 
 
@@ -41,19 +36,16 @@ def askquestion():
     # this where we need to add a successfully asked question page
     return "You submitted"
 
-@app.route("/freqask")
-def freqask():
+@app.route("/frequentask")
+def frequentask():
     data = retrievequestions()
-    print(dict(data))
+    return render_template("frequentask.html", data=data)
+    # print(data)
+    # return data
 
-    # for i in data:
-    #     print(i["title"])
-    #     print(i["description"])
-    #     print("/n")
-    print(data)
-    return data
-
-    
+@app.route("/secretstories")    
+def secretstories():
+    return render_template("secretstories.html")
 
 
 

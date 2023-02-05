@@ -21,4 +21,7 @@ def addquestions(data):
 
 def retrievequestions():
     retquestions = db.questions
+    # returns a lists to display
     return list(retquestions.find())
+
+
