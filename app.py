@@ -1,4 +1,5 @@
 from flask import Flask,request,redirect
+import os
 from flask import render_template
 from db import addquestions, retrievequestions,addstory,fetchstories,addunanweredquestions
 import pymongo
@@ -79,5 +80,6 @@ def secretstories():
 
 
 if __name__ == "__main__":
-    app.run()
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
 
