@@ -8,44 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>EmpowerHer | Empowering Women, Enhancing Lives</title>
-    <script>
-      function addReadMore(text) {
-        if (text.length <= 50) {
-          return text;
-        }
-        const shortenedText = text.substring(0, 50) + '...';
-        const expandedText = text;
-  
-        const readMoreButton = document.createElement('button');
-        readMoreButton.innerHTML = 'Read More';
-        readMoreButton.style.backgroundColor = '#4CAF50';
-        readMoreButton.style.color = 'white';
-        readMoreButton.style.padding = '10px 20px';
-        readMoreButton.style.border = 'none';
-        readMoreButton.style.cursor = 'pointer';
-  
-        const textContainer = document.createElement('p');
-        textContainer.innerHTML = shortenedText;
-        textContainer.style.display = 'inline';
-  
-        readMoreButton.addEventListener('click', function() {
-          if (textContainer.innerHTML === shortenedText) {
-            textContainer.innerHTML = expandedText;
-            readMoreButton.innerHTML = 'Read Less';
-          } else {
-            textContainer.innerHTML = shortenedText;
-            readMoreButton.innerHTML = 'Read More';
-          }
-        });
-  
-        const readMoreContainer = document.createElement('div');
-        readMoreContainer.appendChild(textContainer);
-        readMoreContainer.appendChild(readMoreButton);
-  
-        return readMoreContainer.outerHTML;
-      }
-    </script>
-
+    
   </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
