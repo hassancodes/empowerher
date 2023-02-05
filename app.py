@@ -1,6 +1,6 @@
 from flask import Flask,request,redirect
 from flask import render_template
-from db import addquestions, retrievequestions
+from db import addquestions, retrievequestions,addstory,fetchstories,addunanweredquestions
 import pymongo
 app = Flask(__name__)
 
@@ -22,6 +22,9 @@ def assistance():
 
 
 
+
+#################################################
+#################################################
 @app.route("/askquestion", methods=["GET", "POST"])
 # adding data to the database
 def askquestion():
@@ -31,10 +34,32 @@ def askquestion():
             "title" : title,
             "description": description
             }
-    
-    addquestions(data)
+    addunanweredquestions(data)
+    # addquestions(data)
     # this where we need to add a successfully asked question page
     return "You submitted"
+
+@app.route("/submitpost",methods=["GET","POST"])
+def submitpost():
+    # call a function pull all the stories before that
+
+    title = request.form["title"]
+    story = request.form["story"]
+    storydata = {
+        "storytitle" : title,
+        "storydescription": story
+    }
+    addstory(storydata)
+    return "Story Submitted"
+
+
+
+
+
+
+#################################################
+#################################################
+
 
 @app.route("/frequentask")
 def frequentask():
@@ -45,7 +70,13 @@ def frequentask():
 
 @app.route("/secretstories")    
 def secretstories():
-    return render_template("secretstories.html")
+    # we will load the random stories
+    storydata = fetchstories()
+    # print(storydata[0]["storytitlep
+    print(storydata)
+
+    return render_template("secretstories.html", storydata=storydata)
+
 
 
 

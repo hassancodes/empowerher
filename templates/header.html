@@ -7,21 +7,59 @@
      <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>EmpowerHerNow | Empowering Women, Enhancing Lives</title>
-</head>
+    <title>EmpowerHer | Empowering Women, Enhancing Lives</title>
+    <script>
+      function addReadMore(text) {
+        if (text.length <= 50) {
+          return text;
+        }
+        const shortenedText = text.substring(0, 50) + '...';
+        const expandedText = text;
+  
+        const readMoreButton = document.createElement('button');
+        readMoreButton.innerHTML = 'Read More';
+        readMoreButton.style.backgroundColor = '#4CAF50';
+        readMoreButton.style.color = 'white';
+        readMoreButton.style.padding = '10px 20px';
+        readMoreButton.style.border = 'none';
+        readMoreButton.style.cursor = 'pointer';
+  
+        const textContainer = document.createElement('p');
+        textContainer.innerHTML = shortenedText;
+        textContainer.style.display = 'inline';
+  
+        readMoreButton.addEventListener('click', function() {
+          if (textContainer.innerHTML === shortenedText) {
+            textContainer.innerHTML = expandedText;
+            readMoreButton.innerHTML = 'Read Less';
+          } else {
+            textContainer.innerHTML = shortenedText;
+            readMoreButton.innerHTML = 'Read More';
+          }
+        });
+  
+        const readMoreContainer = document.createElement('div');
+        readMoreContainer.appendChild(textContainer);
+        readMoreContainer.appendChild(readMoreButton);
+  
+        return readMoreContainer.outerHTML;
+      }
+    </script>
+
+  </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">EmpowerHerNow</a>
+        <a class="navbar-brand" href="/">EmpowerHer</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href='{{url_for("assistance")}}'>Ask Question <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href='{{url_for("assistance")}}'>Ask Away <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href='{{url_for("secretstories")}}'>Secret Stories</a>
+              <a class="nav-link" href='{{url_for("secretstories")}}'>WhisperWise</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href='{{url_for("frequentask")}}'>FAQs</a>
@@ -31,7 +69,7 @@
                 Know More
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Problem</a>
+                <a class="dropdown-item" href="#">About Us</a>
                 <a class="dropdown-item" href="#">Another action</a>
                 <a class="dropdown-item" href="#">Something else here</a>
               </div>

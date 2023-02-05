@@ -1,8 +1,13 @@
 # this file is just fo dealing with databases
 import pymongo
+from password import creds
+
 import pprint
-client = pymongo.MongoClient("mongodb+srv://mhassan:622883@questiondb.ow3iutv.mongodb.net/?retryWrites=true&w=majority")
+data = creds()
+
+client = pymongo.MongoClient(f"mongodb+srv://{data['username']}:{data['password']}@questiondb.ow3iutv.mongodb.net/?retryWrites=true&w=majority")
 # creating a database named empower
+
 db = client.empower
 
 
@@ -23,5 +28,41 @@ def retrievequestions():
     retquestions = db.questions
     # returns a lists to display
     return list(retquestions.find())
+
+
+# adding stories to the app
+def addstory(data):
+
+    dblist = db.list_collection_names()
+    if "secrets" in dblist:
+        pass
+    else:
+        db.create_collection("secrets")
+
+    secret = db.secrets 
+    secret.insert_one(data)
+    # {
+    #  name :    
+    #  title : " " 
+    #  story : " "
+    #  }
+
+def fetchstories():
+   secret = db.secrets
+   return list(secret.find())
+
+# print(fetchstories())
+
+
+def  addunanweredquestions(data):
+    dblist = db.list_collection_names()
+    if "unansweredquestions" in dblist:
+        pass
+    else:
+        db.create_collection("unansweredquestions")
+
+    unansquestion = db.unansweredquestions
+    unansquestion.insert_one(data)
+
 
 
