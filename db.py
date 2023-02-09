@@ -1,11 +1,13 @@
 # this file is just fo dealing with databases
 import pymongo
-from password import creds
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 import pprint
-data = creds()
 
-client = pymongo.MongoClient(f"mongodb+srv://{data['username']}:{data['password']}@questiondb.ow3iutv.mongodb.net/?retryWrites=true&w=majority")
+
+client = pymongo.MongoClient(f"mongodb+srv://{os.getenv('USER')}:{os.getenv('PASSWORD')}@questiondb.ow3iutv.mongodb.net/?retryWrites=true&w=majority")
 # creating a database named empower
 
 db = client.empower
