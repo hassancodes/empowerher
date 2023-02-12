@@ -23,3 +23,4 @@
 * Adding more features like edit, or to delete the anonymous post
 * Improve UI/UX
 * Add business logic to the system.
+* Convert it into a scaleable Solution.
