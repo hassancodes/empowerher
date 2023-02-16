@@ -24,3 +24,5 @@
 * Improve UI/UX
 * Add business logic to the system.
 * Convert it into a scaleable Solution.
+
+<div align="center">Empowering Women</div>
