@@ -26,7 +26,7 @@ def assistance():
 #################################################
 #################################################
 @app.route("/askquestion", methods=["GET", "POST"])
-# adding data to the database
+# adding data to the database (MongoDB-online)
 def askquestion():
     title = request.form["title"]
     description = request.form["description"]
