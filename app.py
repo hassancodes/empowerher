@@ -81,6 +81,7 @@ def secretstories():
 
 
 
+# check if the function is running from the main file.
 if __name__== "__main__":
     app.run()
 
