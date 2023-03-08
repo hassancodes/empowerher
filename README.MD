@@ -28,7 +28,8 @@
 
 # Prototype landing page
 
-!["image"]("readmeimg/anonycare-1.png")
+!["image 1"](readmeimg/anonycare-1.png)
+!["image 2"](readmeimg/anonycare-2.png)
 
 
 
