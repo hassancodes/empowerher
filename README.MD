@@ -27,13 +27,14 @@
 
 
 # Prototype landing page
-
+* Main Section
 !["image 1"](readmeimg/anonycare-1.png)
+
+* services section
 !["image 2"](readmeimg/anonycare-2.png)
 
+# Revamped UI design coming soon!
+.... 
 
 
 <div align="center">Empowering Women</div>
-<div align="center">In production</div>
-<div align="center">Dated : 2/21/23</div>
-<div align="center"><------></div>
